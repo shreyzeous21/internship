@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS DOM Assignments</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        transition: background-color 0.5s, color 0.5s;
+      }
+      .dark-mode {
+        background-color: #333;
+        color: #fff;
+      }
+      .assignment-section {
+        margin-bottom: 20px;
+      }
+      .assignment-section button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="assignment-section">
+      <h2>Dark Theme</h2>
+      <button id="theme-toggle">Toggle Theme</button>
+    </div>
+
+    <div class="assignment-section">
+      <h2>Div Creation</h2>
+      <button id="create-div">Create Div</button>
+    </div>
+
+    <div class="assignment-section">
+      <h2>Hide Show Paragraph</h2>
+      <p id="my-paragraph">This is a paragraph that can be hidden or shown.</p>
+      <button id="toggle-paragraph">Toggle Paragraph</button>
+    </div>
+
+    <div class="assignment-section">
+      <h2>Dynamic CSS</h2>
+      <p id="styled-paragraph">This paragraph will have dynamic styles.</p>
+      <button id="style-paragraph">Change Style</button>
+    </div>
+
+    <script>
+      // dark theme
+      document
+        .getElementById("theme-toggle")
+        .addEventListener("click", function () {
+          document.body.classList.toggle("dark-mode");
+        });
+
+      // div created on cick
+      function createDiv(width, height, text) {
+        const newDiv = document.createElement("div");
+        newDiv.style.width = width + "px";
+        newDiv.style.height = height + "px";
+        newDiv.textContent = text;
+        newDiv.style.backgroundColor = "lightgray";
+        newDiv.style.border = "1px solid black";
+        newDiv.style.display = "flex";
+        newDiv.style.alignItems = "center";
+        newDiv.style.justifyContent = "center";
+        newDiv.style.margin = "10px";
+        document.body.appendChild(newDiv);
+      }
+
+      document
+        .getElementById("create-div")
+        .addEventListener("click", function () {
+          createDiv(200, 100, "Hello, I'm a new div!");
+        });
+
+      // hide show para
+      document
+        .getElementById("toggle-paragraph")
+        .addEventListener("click", function () {
+          const paragraph = document.getElementById("my-paragraph");
+          if (paragraph.style.display === "none") {
+            paragraph.style.display = "block";
+          } else {
+            paragraph.style.display = "none";
+          }
+        });
+
+      // dynamic css
+      document
+        .getElementById("style-paragraph")
+        .addEventListener("click", function () {
+          const paragraph = document.getElementById("styled-paragraph");
+          paragraph.style.color = "blue";
+          paragraph.style.backgroundColor = "yellow";
+          paragraph.style.fontSize = "20px";
+          paragraph.style.padding = "10px";
+        });
+    </script>
+  </body>
+</html>
