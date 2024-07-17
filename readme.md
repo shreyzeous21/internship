@@ -9,7 +9,7 @@
 **Task 5** [Link](https://task5hb.netlify.app/)
 
 **Task 6** [Link](https://task6hb.netlify.app/)
-<!-- 
+
 **Task 7** [Link](https://task7hb.netlify.app/)
 
-**Task 8** [Link](https://taskhb.netlify.app/) -->
+**Task 8** [Link](https://taskhb.netlify.app/)
