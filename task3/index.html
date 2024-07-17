@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Indian States</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-white p-4">
+    <!-- filter data start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Indian States Filter</h1>
+      <button onclick="filterStates()" class="bg-blue-600 p-2 rounded">
+        Filter States
+      </button>
+
+      <div id="result" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- filter data end -->
+
+    <!-- arr splice start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Modify String Example:INDIA</h1>
+      <button onclick="modifyString()" class="bg-blue-600 p-2 rounded">
+        Get Indonesia
+      </button>
+
+      <div id="result_splice" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- arr splice end -->
+
+    <!-- count vowels start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Count Vowels and Consonants</h1>
+      <input
+        id="inputStr1"
+        type="text"
+        placeholder="Enter a string (min 20 chars)"
+        class="p-2 rounded bg-gray-800 text-white mb-2"
+      />
+      <button
+        onclick="countVowelsAndConsonants()"
+        class="bg-blue-600 p-2 rounded"
+      >
+        Count
+      </button>
+
+      <div
+        id="result_count_vowels_1"
+        class="mt-4 p-4 bg-gray-800 rounded"
+      ></div>
+    </div>
+    <!-- count vowels end -->
+
+    <!-- replace word start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Replace Wrong Word in a Sentence</h1>
+      <input
+        id="inputStr2"
+        type="text"
+        placeholder="Enter a sentence"
+        class="p-2 rounded bg-gray-800 text-white mb-2"
+      />
+      <input
+        id="wrongWord"
+        type="text"
+        placeholder="Enter wrong word"
+        class="p-2 rounded bg-gray-800 text-white mb-2"
+      />
+      <input
+        id="correctWord"
+        type="text"
+        placeholder="Enter correct word"
+        class="p-2 rounded bg-gray-800 text-white mb-2"
+      />
+      <button onclick="replaceWord()" class="bg-blue-600 p-2 rounded">
+        Replace Word
+      </button>
+
+      <div id="result_replace_word" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- replace word end -->
+
+    <!-- gr than 5 start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">
+        Filter Numbers Greater Than 5 : [1, 2, 3, 9, 10, 7, 5, 4, 3]
+      </h1>
+      <button onclick="filterNumbers()" class="bg-blue-600 p-2 rounded">
+        Get Numbers
+      </button>
+
+      <div id="result_gr" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- gr than 5 end -->
+
+    <!-- array map for student start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Student Average Scores</h1>
+      <button onclick="calculateAverages()" class="bg-blue-600 p-2 rounded">
+        Get Averages
+      </button>
+
+      <div id="result_arr_map" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- array map for student end -->
+
+    <!-- input num sum start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Repeated Sum of Digits</h1>
+      <input
+        id="inputNum"
+        type="number"
+        placeholder="Enter a number"
+        class="p-2 rounded bg-gray-800 text-white mb-2"
+      />
+      <button onclick="findSingleDigit()" class="bg-blue-600 p-2 rounded">
+        Calculate
+      </button>
+
+      <div id="result_num" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- input num sum end -->
+
+    <!-- count para start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Count Words in a Paragraph</h1>
+      <textarea
+        id="inputParagraph"
+        rows="5"
+        placeholder="Enter your paragraph here"
+        class="p-2 rounded bg-gray-800 text-white mb-2"
+      ></textarea>
+      <button onclick="countWords()" class="bg-blue-600 p-2 rounded">
+        Count Words
+      </button>
+
+      <div id="result_p" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- count para end -->
+
+    <!-- rev string start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Reverse a String</h1>
+      <input
+        id="inputStr"
+        type="text"
+        placeholder="Enter a string"
+        class="p-2 rounded bg-gray-800 text-white mb-2"
+      />
+      <button onclick="reverseString()" class="bg-blue-600 p-2 rounded">
+        Reverse
+      </button>
+
+      <div id="result_rev" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- rev string end -->
+
+    <!-- object 11 sart -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Calculate Student Averages</h1>
+      <button onclick="calculateAverages1()" class="bg-blue-600 p-2 rounded">
+        Get Averages
+      </button>
+
+      <div id="result12" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+
+    <!-- object 11 end -->
+
+    <script>
+      //obj 11
+      const students11 = {
+        student1: {
+          subject1: 44,
+          subject2: 56,
+          subject3: 87,
+          subject4: 97,
+          subject5: 37,
+        },
+        student2: {
+          subject1: 44,
+          subject2: 56,
+          subject3: 87,
+          subject4: 97,
+          subject5: 37,
+        },
+        student3: {
+          subject1: 44,
+          subject2: 56,
+          subject3: 87,
+          subject4: 97,
+          subject5: 37,
+        },
+      };
+
+      const calculateAverages1 = () => {
+        const averages = Object.keys(students11).map((student) => {
+          const scores = Object.values(students11[student]);
+          const average =
+            scores.reduce((sum, score) => sum + score, 0) / scores.length;
+          return { [students11]: { average: Math.round(average) } };
+        });
+
+        document.getElementById("result12").textContent = JSON.stringify(
+          averages,
+          null,
+          2
+        );
+      };
+
+      // rev string
+      const reverseString = () => {
+        const str = document.getElementById("inputStr").value;
+        const reversed = str.split("").reverse().join("");
+        document.getElementById(
+          "result_rev"
+        ).textContent = `Reversed String: ${reversed}`;
+      };
+
+      //count the word in para
+      const countWords = () => {
+        const paragraph = document
+          .getElementById("inputParagraph")
+          .value.trim();
+        if (paragraph.length === 0) {
+          document.getElementById("result_p").textContent =
+            "Please enter a paragraph.";
+          return;
+        }
+
+        const words = paragraph.split(/\s+/); // Split by whitespace
+        const wordCount = words.length;
+        document.getElementById(
+          "result_p"
+        ).textContent = `Word Count: ${wordCount}`;
+      };
+
+      // num sum
+      const repeatedSum = (num) => {
+        while (num >= 10) {
+          num = String(num)
+            .split("")
+            .reduce((sum, digit) => sum + Number(digit), 0);
+        }
+        return num;
+      };
+      const findSingleDigit = () => {
+        const inputNum = parseInt(document.getElementById("inputNum").value);
+        if (isNaN(inputNum) || inputNum < 0) {
+          document.getElementById("result").textContent =
+            "Please enter a valid positive number.";
+          return;
+        }
+
+        const result = repeatedSum(inputNum);
+        document.getElementById(
+          "result_num"
+        ).textContent = `Single Digit: ${result}`;
+      };
+
+      // use vowel filter
+      const statesInIndia = [
+        "Andhra Pradesh",
+        "Arunachal Pradesh",
+        "Assam",
+        "Bihar",
+        "Chhattisgarh",
+        "Goa",
+        "Gujarat",
+        "Haryana",
+        "Himachal Pradesh",
+        "Jharkhand",
+        "Karnataka",
+        "Kerala",
+        "Madhya Pradesh",
+        "Maharashtra",
+        "Manipur",
+        "Meghalaya",
+        "Mizoram",
+        "Nagaland",
+        "Odisha",
+        "Punjab",
+        "Rajasthan",
+        "Sikkim",
+        "Tamil Nadu",
+        "Telangana",
+        "Tripura",
+        "Uttar Pradesh",
+        "Uttarakhand",
+        "West Bengal",
+      ];
+      const filterStates = () => {
+        const filteredStates = statesInIndia.filter((state) => {
+          const firstLetter = state[0].toLowerCase();
+          return (
+            firstLetter !== "a" &&
+            firstLetter !== "e" &&
+            firstLetter !== "i" &&
+            firstLetter !== "o" &&
+            firstLetter !== "u"
+          );
+        });
+
+        document.getElementById(
+          "result"
+        ).textContent = `Filtered States: ${filteredStates.join(", ")}`;
+      };
+
+      //   splice method
+      const modifyString = () => {
+        let string = "INDIA";
+        let arr = string.split("");
+        arr.splice(3, 0, "O", "N", "E", "S"); // Insert 'ONES'
+        let result = arr.join("");
+        document.getElementById(
+          "result_splice"
+        ).textContent = `Result: ${result}`; // Output: 'INDONESIA'
+      };
+
+      //   count methhod
+      const countVowelsAndConsonants = () => {
+        const str1 = document.getElementById("inputStr1").value;
+        if (str1.length < 20) {
+          document.getElementById("result").textContent =
+            "Please enter at least 20 characters.";
+          return;
+        }
+        const vowels = "aeiouAEIOU";
+        let vowelCount = 0;
+        let consonantCount = 0;
+        for (let char of str) {
+          if (char.match(/[a-zA-Z]/)) {
+            // Check if it's an alphabet
+            if (vowels.includes(char)) {
+              vowelCount++;
+            } else {
+              consonantCount++;
+            }
+          }
+        }
+        document.getElementById(
+          "result_count_vowels_1"
+        ).textContent = `Vowels: ${vowelCount}, Consonants: ${consonantCount}`;
+      };
+
+      //   correct w0rd and wrong word
+      const correctfn = (string, wrong, correct) => {
+        return string.replace(wrong, correct); //
+      };
+      const replaceWord = () => {
+        const sentence = document.getElementById("inputStr2").value;
+        const wrong = document.getElementById("wrongWord").value;
+        const correct = document.getElementById("correctWord").value;
+
+        if (!sentence || !wrong || !correct) {
+          document.getElementById("result").textContent =
+            "Please fill in all fields.";
+          return;
+        }
+
+        const result = correctfn(sentence, wrong, correct);
+        document.getElementById(
+          "result_replace_word"
+        ).textContent = `Modified Sentence: ${result}`;
+      };
+
+      //   gr tha 5
+      const inputArr = [1, 2, 3, 9, 10, 7, 5, 4, 3];
+      const filterNumbers = () => {
+        const answer = inputArr.filter((num) => num > 5);
+        document.getElementById(
+          "result_gr"
+        ).textContent = `Numbers greater than 5: ${answer.join(", ")}`;
+      };
+
+      //   arry student marks
+      const students = [
+        { name: "Ram", scores: [80, 70, 60] },
+        { name: "Mohan", scores: [80, 70, 90] },
+        { name: "Sai", scores: [60, 70, 80] },
+        { name: "Hemang", scores: [90, 90, 80, 80] },
+      ];
+
+      const calculateAverages = () => {
+        const output = students.map((student) => {
+          const average =
+            student.scores.reduce((sum, score) => sum + score, 0) /
+            student.scores.length;
+          return { name: student.name, average: Math.round(average) };
+        });
+
+        document.getElementById("result_arr_map").textContent = JSON.stringify(
+          output,
+          null,
+          2
+        );
+      };
+    </script>
+  </body>
+</html>
