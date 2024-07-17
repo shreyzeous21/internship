@@ -12,4 +12,4 @@
 
 **Task 7** [Link](https://task7hb.netlify.app/)
 
-**Task 8** [Link](https://taskhb.netlify.app/)
+**Task 8** [Link](https://task8hb.netlify.app/)
