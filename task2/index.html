@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even Numbers, Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black h-screen w-screen text-white">
+    <!-- even number section start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Even Numbers</h1>
+      <div id="even_num" class="bg-gray-800 p-4 rounded"></div>
+    </div>
+    <!-- even numbers section end -->
+
+    <!-- calc section start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Simple Calculator</h1>
+      <div>
+        <input
+          id="num1"
+          type="number"
+          placeholder="First number"
+          class="p-2 rounded bg-gray-800 text-white"
+        />
+        <input
+          id="num2"
+          type="number"
+          placeholder="Second number"
+          class="p-2 rounded bg-gray-800 text-white"
+        />
+        <select id="operation" class="p-2 rounded bg-gray-800 text-white">
+          <option value="add">Add</option>
+          <option value="subtract">Subtract</option>
+          <option value="multiply">Multiply</option>
+          <option value="divide">Divide</option>
+        </select>
+        <button
+          onclick="calculate()"
+          class="p-2 bg-blue-600 rounded text-white"
+        >
+          Calculate
+        </button>
+      </div>
+      <div id="calc_result" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- calc section end -->
+
+    <!-- tax calc start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Tax Calculator</h1>
+      <input
+        id="salary"
+        type="number"
+        placeholder="Enter salary"
+        class="p-2 rounded bg-gray-800 text-white"
+      />
+      <button onclick="findTax()" class="p-2 bg-green-600 rounded text-white">
+        Calculate Tax
+      </button>
+      <ul>
+        points to be noted :-
+        <li>if 500000 >= salary > 0 then 0% tax on the entire salary.</li>
+        <li>
+          If 1000000 >= salary > 500000 then 10% tax on the entire salary.
+        </li>
+        <li>
+          If 1500000 >= salary > 1000000 then 20% tax on the entire salary.
+        </li>
+        <li>If the salary > 1500000 then 30% tax on the entire salary.</li>
+      </ul>
+      <div id="tax_result" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- tax calc end -->
+
+    <!-- sum of products start -->
+    <div class="p-4">
+      <h1 class="text-2xl font-bold mb-4">Sum of Products of Digits</h1>
+      <input
+        id="sum_num1"
+        type="number"
+        placeholder="Enter first number"
+        class="p-2 rounded bg-gray-800 text-white mb-2"
+      />
+      <input
+        id="sum_num2"
+        type="number"
+        placeholder="Enter second number"
+        class="p-2 rounded bg-gray-800 text-white mb-2"
+      />
+      <button
+        onclick="calculateSumOfProducts()"
+        class="p-2 bg-purple-600 rounded text-white"
+      >
+        Calculate Sum of Products
+      </button>
+      <div id="sum_result" class="mt-4 p-4 bg-gray-800 rounded"></div>
+    </div>
+    <!-- sum of products end -->
+
+    <script>
+      // Function to display even numbers
+      const display_num = () => {
+        let output = "";
+        for (let i = 1; i <= 100; i++) {
+          if (i % 2 == 0) {
+            output += i + " ";
+          }
+        }
+        document.getElementById("even_num").textContent = output;
+        console.log(output);
+      };
+
+      // Function for simple calculator
+      const calculate = () => {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const operation = document.getElementById("operation").value;
+        let result;
+
+        switch (operation) {
+          case "add":
+            result = num1 + num2;
+            break;
+          case "subtract":
+            result = num1 - num2;
+            break;
+          case "multiply":
+            result = num1 * num2;
+            break;
+          case "divide":
+            result = num1 / num2;
+            break;
+          default:
+            result = "Invalid operation";
+        }
+
+        document.getElementById(
+          "calc_result"
+        ).textContent = `Result: ${result}`;
+      };
+
+      // Function for tax calculation
+      const findTax = () => {
+        const salary = parseFloat(document.getElementById("salary").value);
+        let tax;
+
+        switch (true) {
+          case salary > 0 && salary <= 500000:
+            tax = 0;
+            break;
+          case salary > 500000 && salary <= 1000000:
+            tax = salary * 0.1;
+            break;
+          case salary > 1000000 && salary <= 1500000:
+            tax = salary * 0.2;
+            break;
+          case salary > 1500000:
+            tax = salary * 0.3;
+            break;
+          default:
+            tax = "Invalid salary";
+        }
+
+        document.getElementById("tax_result").textContent = `Tax: ${tax}`;
+      };
+
+      // Function for sum of products of digits
+      const calculateSumOfProducts = () => {
+        const n1 = document.getElementById("sum_num1").value;
+        const n2 = document.getElementById("sum_num2").value;
+
+        let sum = 0;
+        const maxLength = Math.max(n1.length, n2.length);
+        
+        for (let i = 0; i < maxLength; i++) {
+          const digit1 = Number(n1[n1.length - 1 - i] || 0);
+          const digit2 = Number(n2[n2.length - 1 - i] || 0);
+          sum += digit1 * digit2;
+        }
+
+        document.getElementById("sum_result").textContent = `Sum of Products: ${sum}`;
+      };
+
+      // Call function to display even numbers
+      display_num();
+    </script>
+  </body>
+</html>

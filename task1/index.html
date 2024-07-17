@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>task1-image viewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="logo text-xl font-bold">Logo</div>
+        <nav>
+          <ul class="flex gap-4">
+            <li><a href="#" class="hover:text-gray-400">Facebook</a></li>
+            <li><a href="#" class="hover:text-gray-400">Twitter</a></li>
+            <li><a href="#" class="hover:text-gray-400">LinkedIn</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Menubar -->
+    <nav class="bg-gray-700 text-white p-4">
+      <ul class="flex gap-4 justify-center items-center container mx-auto">
+        <li><a href="#" class="hover:text-gray-400">Home</a></li>
+        <li><a href="#" class="hover:text-gray-400">About</a></li>
+        <li><a href="#" class="hover:text-gray-400">Services</a></li>
+        <li><a href="#" class="hover:text-gray-400">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto flex flex-1 mt-4">
+      <!-- Sidebar -->
+      <aside class="w-1/4 bg-gray-200 p-4">
+        <h2 class="font-bold text-lg">Sidebar</h2>
+        <ul class="space-y-2">
+          <li>
+            <a href="#" class="block p-2 bg-gray-300 rounded">Home</a>
+          </li>
+          <li>
+            <a href="#" class="block p-2 bg-gray-300 rounded">Contact Me</a>
+          </li>
+          <li>
+            <a href="#" class="block p-2 bg-gray-300 rounded">View More</a>
+          </li>
+          <li>
+            <a href="#" class="block p-2 bg-gray-300 rounded">Login</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main -->
+      <main class="w-3/4 p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="content-box bg-gray-100 p-4 rounded shadow">
+            <h3 class="text-xl font-bold mb-2">Image 1</h3>
+            <img
+              src="https://images.unsplash.com/photo-1721058454660-19f3546d588c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4fHx8ZW58MHx8fHx8"
+              alt="Image 1"
+              class="w-full mb-2"
+            />
+            <p>Description 1.</p>
+          </div>
+          <div class="content-box bg-gray-100 p-4 rounded shadow">
+            <h3 class="text-xl font-bold mb-2">Image 2</h3>
+            <img
+              src="https://images.unsplash.com/photo-1716890385566-dee802c56d2d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8"
+              alt="Image 2"
+              class="w-full mb-2"
+            />
+            <p>Description 2.</p>
+          </div>
+          <div class="content-box bg-gray-100 p-4 rounded shadow">
+            <h3 class="text-xl font-bold mb-2">Image 3</h3>
+            <img
+              src="https://images.unsplash.com/photo-1721112796760-fe228d1e22a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Image 3"
+              class="w-full mb-2"
+            />
+            <p>Description 3.</p>
+          </div>
+          <div class="content-box bg-gray-100 p-4 rounded shadow">
+            <h3 class="text-xl font-bold mb-2">Image 4</h3>
+            <img
+              src="https://images.unsplash.com/photo-1721191149571-d09f621d59ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxOHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Image 4"
+              class="w-full mb-2"
+            />
+            <p>Description 4.</p>
+          </div>
+          <div class="content-box bg-gray-100 p-4 rounded shadow">
+            <h3 class="text-xl font-bold mb-2">Image 5</h3>
+            <img
+              src="https://images.unsplash.com/photo-1708958151986-2b032fde35ce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Image 5"
+              class="w-full mb-2"
+            />
+            <p>Description 5.</p>
+          </div>
+          <div class="content-box bg-gray-100 p-4 rounded shadow">
+            <h3 class="text-xl font-bold mb-2">Image 6</h3>
+            <img
+              src="https://images.unsplash.com/photo-1721157549677-73644a262b6c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyM3x8fGVufDB8fHx8fA%3D%3D"
+              alt="Image 6"
+              class="w-full mb-2"
+            />
+            <p>Description 6.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-4 mt-auto">
+      <p>shrey build @2024</p>
+    </footer>
+  </body>
+</html>
